@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<settings enableScaling="true" />
+
+	<!-- Interlude is a minimal TheaterMode for MusicBee. With lyrics support and dynamic background. Choose between blurred album art or artist gallery as background -->
+
+	<!-- Blurred Album Art Background -->
+	<element type="BackgroundAlbumCover" brightness="0.2" refreshInterval="EndOfTrack" />
+
+	<!-- Artist Gallery -->
+	<autoHide name="#ArtistGallery">
+		<element name="#Gallery" type="Gallery" x="0" y="0" widthDock="x:Panel.Right" width="0" heightDock="y:Panel.Bottom" height="0" aspectRatio="zoomKeep" fillColor="192,0,0,0" interval="30" brightness="0.2" fade="0.2" tags="artist" />
+		<element type="Block" xAnchor="#Gallery.Left" x="0" yAnchor="#Gallery.Top" y="0" widthDock="x:#Gallery.Right" width="0" heightDock="y:#Gallery.Bottom" height="0" bg="232,0,0,0" />
+	</autoHide>
+
+	<!-- Background Toggle Button -->
+	<element type="Text" font="Segoe MDL2 Assets" xAnchor="Panel.Right" x="-50" y="20" width="50" style="Regular" size="11" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="OpenAutoHidePanel:#ArtistGallery">&#xEF1F;</element>
+
+
+	<!-- Lyrics -->
+	<autoHide name="#SidebarLyrics" xAnchor="Panel.Right" x="-460" y="100" width="450" heightDock="Panel" height="-300" bg="0,0,0,0" fg="192,0,0,0" fg2="245, 135, 5" allowPinning="true" resizePictures="false" disableHotPoint="true">
+		<element type="Lyrics" xAnchor="Panel.Right" x="-460" y="144" width="450" heightDock="Y:#SidebarLyrics.Bottom" font="Segoe UI Semibold" style="Regular" align="Right" size="25" fg="104, 104, 104" fg2="224, 224, 224"></element>
+	</autoHide>
+
+	<!-- Progress Bar -->
+	<element type="ProgressBar" xAnchor="Panel.Left" yAnchor="Panel.Bottom" x="43" y="-138" widthDock="X:Panel.Right" width="-43" height="2" bg="7,255,255,255" fg="245,245,245"></element>
+
+	<!-- Player Controls -->
+	<element type="PlayerBar" xAnchor="Panel.Right" x="70" yAnchor="Panel.Bottom" y="-75" width="50" height="0"></element>
+	<element name="#LyricsStatus" type="Text" xAnchor="Panel.Right" x="-245" yAnchor="Panel.Bottom" y="-60" width="50" font="Segoe MDL2 Assets" style="Regular" size="15" fg="55,50,70" fg2="245,245,245" mouseOverFg="245, 135, 5" onClick="OpenFloatingPanel(#SidebarLyrics)">&#xE90B;</element>
+	<element name="#prevbutton" type="Text" xAnchor="Panel.Right" x="-195" yAnchor="Panel.Bottom" y="-60" width="50" font="Segoe MDL2 Assets" style="Regular" size="15" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="PlayPrevious">&#xE100;</element>
+	<element type="Text" xAnchor="Panel.Right" x="-156" yAnchor="Panel.Bottom" y="-60" width="50" font="Segoe MDL2 Assets" style="Regular" size="15" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="PlayPause" visibleTrigger="Playing">&#xE103;</element>
+	<element type="Text" xAnchor="Panel.Right" x="-155" yAnchor="Panel.Bottom" y="-60" width="50" font="Segoe MDL2 Assets" style="Regular" size="15" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="PlayPause" visibleTrigger="NotPlaying">&#xE102;</element>
+	<element type="Text" xAnchor="Panel.Right" x="-115" yAnchor="Panel.Bottom" y="-60" width="50" font="Segoe MDL2 Assets" style="Regular" size="15" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="PlayNext">&#xE101;</element>
+	<element type="Text" xAnchor="Panel.Right" x="-59" yAnchor="Panel.Bottom" y="-56" width="50" font="Segoe MDL2 Assets" style="Regular" size="10" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="CloseWindow">&#xE8BB;</element>
+
+
+	<!-- Track Info -->
+	<element type="AlbumCover" x="42" yAnchor="Panel.Bottom" y="-315" width="150" height="150" min="150" max="150" brightness="1.0"></element>
+	<element type="ProgressPosition" xAnchor="Panel.Right" x="-260" yAnchor="Panel.Bottom" y="-120" widthDock="X:Panel.Right" width="-36" align="right" font="Segoe UI Semibold" style="Regular" size="10" fg="245,245,245"></element>
+	<element name="BigTitle" type="Field" id="Title" x="35" yAnchor="Panel.Bottom" y="-125" width="0" reserveWidth="120" font="Arial Black" style="Bold" size="22" fg="245,245,245"></element>
+	<element type="Field" id="Artist" x="39" yAnchor="Panel.Bottom" y="-71" widthDock="X:#prevbutton.Left" width="-10" font="Segoe UI" style="Regular" size="12" fg="245,245,245" mouseOverFg="245, 135, 5" onClick="OpenFloatingPanel(#SidebarArtist)"></element>
+	<element type="Field" id="Album" x="39" yAnchor="Panel.Bottom" y="-48" widthDock="X:#prevbutton.Left" width="-10" font="Segoe UI" style="Regular" size="11" fg="245,245,245"></element>
+
+	<!-- Code developed by https://github.com/gokulmanohar -->
+
+</root>
