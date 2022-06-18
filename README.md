@@ -5,6 +5,10 @@ Interlude is a minimal TheaterMode for MusicBee. With lyrics support and dynamic
 
 ![Screenshot](https://i.ibb.co/9b9k28F/interlude-combined-min.jpg)
 
+## Install
+* [Download](https://github.com/gokulmanohar/MusicBee-TheaterMode-Interlude/releases) and unzip.
+* Copy `TheaterMode.List` directory and paste it in `<path>\MusicBee\Plugins`.
+
+
 
 Code developed by https://github.com/gokulmanohar
-
